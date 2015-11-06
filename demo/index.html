@@ -1,0 +1,82 @@
+
+<!-- saved from url=(0045)http://www.gigamonkeys.com/tmp/test-diff.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Prose diff test document</title>
+
+        <link rel="stylesheet" href="../diff.css" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+        </script>
+        <script src="../diff.js">
+        </script>
+    <style type="text/css"></style></head>
+    <body data-feedly-mini="yes">
+        <h1>Prose diff test document</h1>
+        <div class="moved-to diff">
+            <p>Moving up is what this paragraph will do.</p>
+        </div>
+        <div class="moved-to diff">
+            <p>Upward movement with <span class="add diff">some </span>editing is what happens to this text.</p>
+        </div>
+        <p>A test document. This is a paragraph that should appear in both versions.</p>
+        <p>Will be <span class="delete diff">slightly </span>edited <span class="add diff">a little bit </span>in the edited version.</p>
+        <p>This is a long paragraph that will be split into to two parts in the edited version.<span class="moved-from diff"><span class="delete diff"> </span>As it stands now it just goes on and on and on.</span></p>
+        <p><span class="moved-to diff"><span class="delete diff"> </span>As it stands now it just goes on and on and on.</span></p>
+        <p>This is a short paragraph that will be joined with the next paragraph.<span class="moved-to diff"><span class="add diff"> </span>This paragraph will be joined with the previous one.</span></p>
+        <p><span class="moved-from diff"><span class="add diff"> </span>This paragraph will be joined with the previous one.</span></p>
+        <div class="moved-from diff">
+            <p>This paragraph will be moved.</p>
+        </div>
+        <div class="moved-from diff">
+            <p>This paragraph will be moved and <span class="delete diff">edited</span><span class="add diff">changed</span>.</p>
+        </div>
+        <div class="delete diff">
+            <p>Deletion is the fate of this block of text.</p>
+        </div>
+        <div class="add diff">
+            <p>The text of this paragraph is completely new. It doesn't appear in any form in the original document.</p>
+        </div>
+        <p>I like dogs a lot. <span class="moved-to diff">Puppies are neat too. <span class="delete diff">Kittens are fuzzy furballs.</span></span>I also like cats.<span class="add diff"> Kittens are fuzzy furballs.</span></p>
+        <p><span class="moved-from diff">Puppies are neat too. <span class="delete diff">Kittens are fuzzy furballs.</span></span></p>
+        <p>This is <span class="delete diff"><i>quux</i></span><span class="add diff"><b>quux</b></span> formatted text.</p>
+        <div class="moved-from diff">
+            <p>Moving up is what this paragraph will do.</p>
+        </div>
+        <div class="moved-from diff">
+            <p>Upward movement with <span class="add diff">some </span>editing is what happens to this text.</p>
+        </div>
+        <div class="moved-to diff">
+            <p>This paragraph will be moved.</p>
+        </div>
+        <div class="moved-to diff">
+            <p>This paragraph will be moved and <span class="delete diff">edited</span><span class="add diff">changed</span>.</p>
+        </div>
+        <h2>Tokenization tests</h2>
+        <p>Depending on how we split text into tokens when computing the LCS we can get slightly better or worse diffs. The remaining paragraphs in this section show some of the issues.</p>
+        <p><span class="delete diff">Foo bar baz </span><span class="add diff">Quux biff boom </span>and stuff. Ideally there's one addition and one deletion.</p>
+        <p>One <span class="delete diff">foo bar baz </span><span class="add diff">quux biff boom </span>and stuff. Ideally there's one addition and one deletion.</p>
+        <p>Two <span class="delete diff">foo bar baz </span><span class="add diff">quux biff </span>and stuff. Ideally there's one addition and one deletion.</p>
+        <p>Three <span class="delete diff">foo bar baz </span><span class="add diff">quux biff boom blat </span>and stuff. Ideally there's one addition and one deletion.</p>
+        <p>Four I hope there's only one deletion and addition following: <span class="delete diff">foo bar baz</span><span class="add diff">quux biff boom</span></p>
+        <p>Five I hope there's only one deletion and addition following: <span class="delete diff">foo bar baz </span><span class="add diff">quux biff boom </span>and stuff.</p>
+        <p>A sentence that ends with foo<span class="add diff"> and bar</span>. Ideally foo will not be struck out in the diff.</p>
+        <p>A sentence that ends with <span class="add diff">"</span>foo<span class="add diff">"</span>. Ideally the only diff will be the addition of quotes.</p>
+        <div class="add diff">
+            <p>.</p>
+        </div>
+        <ul id="buttons">
+            <li>
+            <button id="show_diff" class="selected">Diff</button>
+            </li>
+            <li>
+            <button id="show_original" class="">Original</button>
+            </li>
+            <li>
+            <button id="show_new" class="">New</button>
+            </li>
+        </ul>
+        <div class="notes">
+        </div>
+        <div class="comments">
+        </div>
+
+</body></html>
